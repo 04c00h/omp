@@ -15,7 +15,7 @@ void min_matrix()
 	int i, j, tmpMin, tmpMax;
 
 	clockStart = omp_get_wtime();
-	//srand(time(0)); //выкл. для отладки, чтобы значения rand() повторялись
+	//srand(time(0)); //РІС‹РєР». РґР»СЏ РѕС‚Р»Р°РґРєРё, С‡С‚РѕР±С‹ Р·РЅР°С‡РµРЅРёСЏ rand() РїРѕРІС‚РѕСЂСЏР»РёСЃСЊ
 
 	#pragma omp parallel for private(j) shared(i) num_threads(NUM_THREADS)
 	for (i = 0; i < N; i++) {
