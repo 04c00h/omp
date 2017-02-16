@@ -9,6 +9,7 @@ const int N = 10000;
 const int M = 10000;
 int matrix[N][M];
 
+//Дана прямоугольная матрица чисел nxm. Найти минимальный среди максимальных элементов каждого столбца
 void min_matrix()
 {
 	long double clockStart, clockStop;
