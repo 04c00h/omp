@@ -8,7 +8,7 @@
 using namespace std;
 
 const int NUM_THREADS = 4;
-const int N = 500;
+const int N = 1000;
 //const int N = 10;
 const int MAX_C = INT_MAX;
 int orgraph[N][N] = {};
@@ -96,16 +96,16 @@ vector<int> path(int s) {
 int main() {
 
 	init();
-	print();
+	//print();
 
 	long double clockStart, clockStop;
 	clockStart = omp_get_wtime();
 
 	vector<int> minPath, p;
-	int minPathLen = N + 1;
-
-	#pragma omp parallel for private(p) shared(minPathLen, minPath, i) num_threads(NUM_THREADS)
-	for (int i = 0; i < N && minPathLen > 4; i++) {
+	int minPathLen = N + 1, i;
+	
+	#pragma omp parallel for private(p) shared(minPathLen, minPath, i, N) num_threads(NUM_THREADS)
+	for (i = 0; i < N; i++) {
 		p = path(i);
 		if (p.size() > 0) {
 			#pragma omp critical (minpath)
