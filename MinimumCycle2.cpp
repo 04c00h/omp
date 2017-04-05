@@ -4,7 +4,6 @@
 #include <omp.h>
 #include <queue>
 #include <vector>
-#include <omp.h>
 
 using namespace std;
 
